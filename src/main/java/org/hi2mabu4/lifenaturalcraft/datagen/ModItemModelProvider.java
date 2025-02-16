@@ -1,12 +1,11 @@
 package org.hi2mabu4.lifenaturalcraft.datagen;
 
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
+
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
-import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
-import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
+import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper exFileHelper) {

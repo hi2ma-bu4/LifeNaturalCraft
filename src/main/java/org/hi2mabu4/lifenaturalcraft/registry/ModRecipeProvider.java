@@ -1,10 +1,16 @@
 package org.hi2mabu4.lifenaturalcraft.registry;
 
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
+import javax.annotation.Nonnull;
+
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
-import org.jetbrains.annotations.NotNull;
+
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 
 public class ModRecipeProvider extends RecipeProvider {
     public ModRecipeProvider(PackOutput output) {
@@ -12,7 +18,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes(@NotNull RecipeOutput consumer) {
+    protected void buildRecipes(@Nonnull RecipeOutput consumer) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.RUBY.get(), 9)
                 .requires(ModItems.RUBY_BLOCK_ITEM.get())
                 .group(Lifenaturalcraft.MODID)

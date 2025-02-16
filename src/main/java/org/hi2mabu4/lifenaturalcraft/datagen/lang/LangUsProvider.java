@@ -1,8 +1,9 @@
 package org.hi2mabu4.lifenaturalcraft.datagen.lang;
 
-import net.minecraft.data.PackOutput;
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
 import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
+
+import net.minecraft.data.PackOutput;
 
 public class LangUsProvider extends ModLanguageProvider {
     public LangUsProvider(PackOutput output) {

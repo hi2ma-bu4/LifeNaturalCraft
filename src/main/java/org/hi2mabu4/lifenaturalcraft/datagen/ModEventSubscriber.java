@@ -1,5 +1,8 @@
 package org.hi2mabu4.lifenaturalcraft.datagen;
 
+import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
+import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
+
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -7,12 +10,9 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
-import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
 
 @Mod.EventBusSubscriber(modid = Lifenaturalcraft.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {
-
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent

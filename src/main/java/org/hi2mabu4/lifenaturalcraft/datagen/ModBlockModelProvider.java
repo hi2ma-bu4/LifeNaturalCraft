@@ -1,12 +1,13 @@
 package org.hi2mabu4.lifenaturalcraft.datagen;
 
-import net.minecraft.data.PackOutput;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
 import org.hi2mabu4.lifenaturalcraft.registry.ModBlocks;
 
-public class ModBlockModelProvider  extends BlockStateProvider {
+import net.minecraft.data.PackOutput;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
+
+public class ModBlockModelProvider extends BlockStateProvider {
     public ModBlockModelProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Lifenaturalcraft.MODID, exFileHelper);
     }

@@ -1,6 +1,19 @@
 package org.hi2mabu4.lifenaturalcraft;
 
+import org.hi2mabu4.lifenaturalcraft.datagen.ModBlockModelProvider;
+import org.hi2mabu4.lifenaturalcraft.datagen.ModItemModelProvider;
+import org.hi2mabu4.lifenaturalcraft.datagen.lang.LangJpProvider;
+import org.hi2mabu4.lifenaturalcraft.datagen.lang.LangUsProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.ModBlockTagsProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.ModBlocks;
+import org.hi2mabu4.lifenaturalcraft.registry.ModCreativeTabs;
+import org.hi2mabu4.lifenaturalcraft.registry.ModItemTagsProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
+import org.hi2mabu4.lifenaturalcraft.registry.ModRecipeProvider;
+import org.slf4j.Logger;
+
 import com.mojang.logging.LogUtils;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -16,11 +29,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.hi2mabu4.lifenaturalcraft.datagen.*;
-import org.hi2mabu4.lifenaturalcraft.datagen.lang.LangJpProvider;
-import org.hi2mabu4.lifenaturalcraft.datagen.lang.LangUsProvider;
-import org.hi2mabu4.lifenaturalcraft.registry.*;
-import org.slf4j.Logger;
 
 // 神資料
 // https://docs.minecraftforge.net/en/1.20.x/
@@ -54,9 +62,11 @@ public class Lifenaturalcraft {
         gen.addProvider(event.includeClient(), new LangJpProvider(gen.getPackOutput()));
         gen.addProvider(event.includeServer(), new ModRecipeProvider(gen.getPackOutput()));
 
-        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, event.getLookupProvider(), fileHelper);
+        ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, event.getLookupProvider(),
+                fileHelper);
         gen.addProvider(event.includeServer(), blockTagsProvider);
-        gen.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, event.getLookupProvider(), blockTagsProvider.contentsGetter(), fileHelper));
+        gen.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, event.getLookupProvider(),
+                blockTagsProvider.contentsGetter(), fileHelper));
     }
 
     @SubscribeEvent
