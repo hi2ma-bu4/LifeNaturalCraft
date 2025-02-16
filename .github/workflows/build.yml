@@ -2,6 +2,8 @@ name: 'Build and Test'
 
 on:
   push:
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -42,3 +44,10 @@ jobs:
         with:
           if-no-files-found: error
           path: dist/*
+
+      - name: Upload JAR to existing release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*.jar  # JARファイルをアップロード
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

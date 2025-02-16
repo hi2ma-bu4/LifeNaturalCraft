@@ -33,6 +33,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // 神資料
 // https://docs.minecraftforge.net/en/1.20.x/
+// https://docs.neoforged.net/docs/gettingstarted/
 // https://www.tntmodders.com/tutorial/#1194
 // https://defeatedcrow.jp/modwiki/IGNIS%E5%88%B6%E4%BD%9C%E8%A8%98%E9%8C%B2
 
