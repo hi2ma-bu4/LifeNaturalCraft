@@ -5,12 +5,14 @@ import org.hi2mabu4.lifenaturalcraft.registry.ModRecipeProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlockModelProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlockTagsProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlocks;
+import org.hi2mabu4.lifenaturalcraft.registry.event.ModForgeEventSubscriber;
 import org.hi2mabu4.lifenaturalcraft.registry.item.ModItemModelProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.item.ModItemTagsProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;
 import org.hi2mabu4.lifenaturalcraft.registry.lang.LangJpProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.lang.LangUsProvider;
 import org.hi2mabu4.lifenaturalcraft.registry.loottable.ModLootTableProvider;
+import org.hi2mabu4.lifenaturalcraft.util.EnableMod;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -44,6 +46,7 @@ public class Lifenaturalcraft {
 
     public Lifenaturalcraft() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        EnableMod.init();
 
         modEventBus.addListener(this::registerProviders);
         ModBlocks.BLOCKS.register(modEventBus);
@@ -51,7 +54,12 @@ public class Lifenaturalcraft {
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.addListener(ModForgeEventSubscriber::nonWaterInfinite);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        if (EnableMod.isLoaded("create")) {
+            LOGGER.info("Create is loaded");
+        }
     }
 
     private void registerProviders(GatherDataEvent event) {

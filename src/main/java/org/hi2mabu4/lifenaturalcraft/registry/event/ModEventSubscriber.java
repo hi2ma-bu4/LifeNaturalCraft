@@ -1,4 +1,4 @@
-package org.hi2mabu4.lifenaturalcraft.registry;
+package org.hi2mabu4.lifenaturalcraft.registry.event;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
 import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;

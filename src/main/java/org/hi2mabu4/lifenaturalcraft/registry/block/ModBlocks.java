@@ -3,6 +3,7 @@ package org.hi2mabu4.lifenaturalcraft.registry.block;
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,10 +15,12 @@ public class ModBlocks {
                         Lifenaturalcraft.MODID);
 
         public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore",
-                        () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
-                                        .mapColor(MapColor.STONE).strength(3.0f, 6.0f)));
+                        () -> new Block(BlockBehaviour.Properties.of()
+                                        .sound(SoundType.STONE).mapColor(MapColor.STONE)
+                                        .strength(3.0f, 6.0f).requiresCorrectToolForDrops()));
         public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block",
-                        () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
-                                        .mapColor(MapColor.COLOR_RED).strength(1.5f, 6.0f)));
+                        () -> new Block(BlockBehaviour.Properties.of()
+                                        .sound(SoundType.STONE).mapColor(MapColor.COLOR_RED)
+                                        .strength(1.5f, 6.0f).requiresCorrectToolForDrops()));
 
 }

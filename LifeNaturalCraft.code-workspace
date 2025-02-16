@@ -12,9 +12,12 @@
 			"javafml",
 			"JSONURL",
 			"lifenaturalcraft",
+			"Lnet",
 			"loottable",
 			"modid",
+			"OVERWORLD",
 			"whereever"
-		]
+		],
+		"java.configuration.updateBuildConfiguration": "automatic"
 	}
 }
