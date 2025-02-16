@@ -1,4 +1,4 @@
-package org.hi2mabu4.lifenaturalcraft.registry;
+package org.hi2mabu4.lifenaturalcraft.registry.block;
 
 import java.util.concurrent.CompletableFuture;
 

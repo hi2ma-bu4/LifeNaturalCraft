@@ -1,6 +1,7 @@
 package org.hi2mabu4.lifenaturalcraft.registry;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

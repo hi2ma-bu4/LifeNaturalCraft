@@ -1,7 +1,6 @@
-package org.hi2mabu4.lifenaturalcraft.datagen;
+package org.hi2mabu4.lifenaturalcraft.registry.block;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
-import org.hi2mabu4.lifenaturalcraft.registry.ModBlocks;
 
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.BlockStateProvider;

@@ -3,6 +3,8 @@ package org.hi2mabu4.lifenaturalcraft.registry;
 import javax.annotation.Nonnull;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
+import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlocks;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;

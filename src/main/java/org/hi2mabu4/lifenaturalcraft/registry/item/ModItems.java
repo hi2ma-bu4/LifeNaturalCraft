@@ -1,6 +1,7 @@
-package org.hi2mabu4.lifenaturalcraft.registry;
+package org.hi2mabu4.lifenaturalcraft.registry.item;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
+import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlocks;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

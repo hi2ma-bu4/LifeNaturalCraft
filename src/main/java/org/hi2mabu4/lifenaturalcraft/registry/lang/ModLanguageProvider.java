@@ -1,4 +1,4 @@
-package org.hi2mabu4.lifenaturalcraft.datagen.lang;
+package org.hi2mabu4.lifenaturalcraft.registry.lang;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
 

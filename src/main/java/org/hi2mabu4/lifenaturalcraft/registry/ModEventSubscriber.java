@@ -1,7 +1,7 @@
-package org.hi2mabu4.lifenaturalcraft.datagen;
+package org.hi2mabu4.lifenaturalcraft.registry;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
-import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;

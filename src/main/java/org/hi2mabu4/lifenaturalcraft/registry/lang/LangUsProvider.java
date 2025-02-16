@@ -1,7 +1,7 @@
-package org.hi2mabu4.lifenaturalcraft.datagen.lang;
+package org.hi2mabu4.lifenaturalcraft.registry.lang;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
-import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;
 
 import net.minecraft.data.PackOutput;
 

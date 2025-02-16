@@ -1,15 +1,16 @@
 package org.hi2mabu4.lifenaturalcraft;
 
-import org.hi2mabu4.lifenaturalcraft.datagen.ModBlockModelProvider;
-import org.hi2mabu4.lifenaturalcraft.datagen.ModItemModelProvider;
-import org.hi2mabu4.lifenaturalcraft.datagen.lang.LangJpProvider;
-import org.hi2mabu4.lifenaturalcraft.datagen.lang.LangUsProvider;
-import org.hi2mabu4.lifenaturalcraft.registry.ModBlockTagsProvider;
-import org.hi2mabu4.lifenaturalcraft.registry.ModBlocks;
 import org.hi2mabu4.lifenaturalcraft.registry.ModCreativeTabs;
-import org.hi2mabu4.lifenaturalcraft.registry.ModItemTagsProvider;
-import org.hi2mabu4.lifenaturalcraft.registry.ModItems;
 import org.hi2mabu4.lifenaturalcraft.registry.ModRecipeProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlockModelProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlockTagsProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.block.ModBlocks;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItemModelProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItemTagsProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.item.ModItems;
+import org.hi2mabu4.lifenaturalcraft.registry.lang.LangJpProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.lang.LangUsProvider;
+import org.hi2mabu4.lifenaturalcraft.registry.loottable.ModLootTableProvider;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -56,11 +57,15 @@ public class Lifenaturalcraft {
         DataGenerator gen = event.getGenerator();
         PackOutput packOutput = gen.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-        gen.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, fileHelper));
-        gen.addProvider(event.includeClient(), new ModBlockModelProvider(packOutput, fileHelper));
-        gen.addProvider(event.includeClient(), new LangUsProvider(gen.getPackOutput()));
-        gen.addProvider(event.includeClient(), new LangJpProvider(gen.getPackOutput()));
-        gen.addProvider(event.includeServer(), new ModRecipeProvider(gen.getPackOutput()));
+        boolean isClient = event.includeClient();
+        boolean isServer = event.includeServer();
+
+        gen.addProvider(isClient, new ModItemModelProvider(packOutput, fileHelper));
+        gen.addProvider(isClient, new ModBlockModelProvider(packOutput, fileHelper));
+        gen.addProvider(isClient, new LangUsProvider(packOutput));
+        gen.addProvider(isClient, new LangJpProvider(packOutput));
+        gen.addProvider(isServer, new ModRecipeProvider(packOutput));
+        gen.addProvider(isServer, new ModLootTableProvider(packOutput));
 
         ModBlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, event.getLookupProvider(),
                 fileHelper);

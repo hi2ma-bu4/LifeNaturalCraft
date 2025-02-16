@@ -1,4 +1,4 @@
-package org.hi2mabu4.lifenaturalcraft.registry;
+package org.hi2mabu4.lifenaturalcraft.registry.block;
 
 import org.hi2mabu4.lifenaturalcraft.Lifenaturalcraft;
 
@@ -14,10 +14,10 @@ public class ModBlocks {
                         Lifenaturalcraft.MODID);
 
         public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore",
-                        () -> new Block(BlockBehaviour.Properties.of()
+                        () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
                                         .mapColor(MapColor.STONE).strength(3.0f, 6.0f)));
         public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block",
-                        () -> new Block(BlockBehaviour.Properties.of()
-                                        .strength(1.5f, 6.0f)));
+                        () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops()
+                                        .mapColor(MapColor.COLOR_RED).strength(1.5f, 6.0f)));
 
 }
