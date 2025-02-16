@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "lifenaturalcraft",
+  "ingredients": [
+    {
+      "item": "lifenaturalcraft:ruby_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "lifenaturalcraft:ruby"
+  }
+}
